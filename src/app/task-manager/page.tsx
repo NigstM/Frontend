@@ -374,12 +374,10 @@ export default function TaskManager() {
   }
 
   return (
-    <div
-      className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark bg-slate-900" : "bg-gradient-to-br from-teal-50 via-cyan-50 to-emerald-50"}`}
-    >
+    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark bg-slate-950" : "bg-white"}`}>
       <div className="mx-auto max-w-6xl p-4">
         {/* Header */}
-        <Card className="mb-6 border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+        <Card className="mb-6 border-0 shadow-xl bg-white dark:bg-slate-900">
           <CardHeader className="bg-gradient-to-r from-teal-600 via-cyan-600 to-emerald-600 text-white rounded-t-lg">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -540,7 +538,7 @@ export default function TaskManager() {
             </div>
 
             {/* Controls */}
-            <div className="flex flex-wrap gap-4 items-center justify-between mb-6 p-4 bg-teal-50 dark:bg-teal-900/20 rounded-xl">
+            <div className="flex flex-wrap gap-4 items-center justify-between mb-6 p-4 bg-teal-50 dark:bg-slate-800 rounded-xl">
               <div className="flex flex-wrap gap-2">
                 {/* Search */}
                 <div className="relative">
@@ -559,7 +557,7 @@ export default function TaskManager() {
                     <Filter className="w-4 h-4 mr-2 bg-white text-teal-600" />
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className= "text-teal-500">
+                  <SelectContent className="text-teal-500">
                     <SelectItem value="all">All</SelectItem>
                     <SelectItem value="pending">Pending</SelectItem>
                     <SelectItem value="completed">Completed</SelectItem>
@@ -598,7 +596,7 @@ export default function TaskManager() {
 
             {/* Bulk operations */}
             {selectedTasks.size > 0 && (
-              <div className="flex items-center gap-2 mb-4 p-3 bg-gradient-to-r from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 rounded-lg border border-teal-200 dark:border-teal-700">
+              <div className="flex items-center gap-2 mb-4 p-3 bg-teal-50 dark:bg-slate-800 rounded-lg border border-teal-200 dark:border-teal-700">
                 <span className="text-sm font-medium text-teal-800 dark:text-teal-200">
                   {selectedTasks.size} task{selectedTasks.size > 1 ? "s" : ""} selected
                 </span>
@@ -735,10 +733,10 @@ export default function TaskManager() {
                     key={task.id}
                     className={`group flex items-start gap-4 p-4 rounded-xl border transition-all duration-200 hover:shadow-lg ${
                       task.completed
-                        ? "bg-gradient-to-r from-teal-50 via-emerald-50 to-cyan-50 dark:from-teal-900/20 dark:via-emerald-900/20 dark:to-cyan-900/20 border-teal-200 dark:border-teal-700"
+                        ? "bg-teal-50 dark:bg-slate-800 border-teal-200 dark:border-teal-700"
                         : isOverdue(task)
-                          ? "bg-gradient-to-r from-rose-50 to-pink-50 dark:from-rose-900/20 dark:to-pink-900/20 border-rose-200 dark:border-rose-700"
-                          : "bg-white dark:bg-slate-800 border-teal-100 dark:border-teal-800 hover:border-teal-300 dark:hover:border-teal-600 shadow-sm"
+                          ? "bg-rose-50 dark:bg-slate-800 border-rose-200 dark:border-rose-700"
+                          : "bg-white dark:bg-slate-900 border-teal-100 dark:border-slate-700 hover:border-teal-300 dark:hover:border-teal-600 shadow-sm"
                     }`}
                   >
                     {/* Selection checkbox */}
