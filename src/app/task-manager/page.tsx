@@ -387,7 +387,7 @@ export default function TaskManager() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <div>
-                  <CardTitle className="text-3xl font-bold">Advanced Task Manager</CardTitle>
+                  <CardTitle className="text-3xl font-bold">Task Manager</CardTitle>
                   <p className="text-teal-100">Organize your life with powerful task management</p>
                 </div>
               </div>
@@ -549,17 +549,17 @@ export default function TaskManager() {
                     placeholder="Search tasks..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 w-64 border-teal-200 focus:border-teal-500 bg-white"
+                    className="pl-10 w-64 border-teal-200 focus:border-teal-500 text-teal-500 bg-white"
                   />
                 </div>
 
                 {/* Filter */}
                 <Select value={filter} onValueChange={(value: FilterType) => setFilter(value)}>
-                  <SelectTrigger className="w-32 border-teal-200 bg-white">
-                    <Filter className="w-4 h-4 mr-2 text-teal-600" />
+                  <SelectTrigger className="w-32 border-teal-200 text-teal-500 bg-white">
+                    <Filter className="w-4 h-4 mr-2 bg-white text-teal-600" />
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className= "text-teal-500">
                     <SelectItem value="all">All</SelectItem>
                     <SelectItem value="pending">Pending</SelectItem>
                     <SelectItem value="completed">Completed</SelectItem>
@@ -569,7 +569,7 @@ export default function TaskManager() {
 
                 {/* Sort */}
                 <Select value={sortBy} onValueChange={(value: SortType) => setSortBy(value)}>
-                  <SelectTrigger className="w-40 border-teal-200 bg-white">
+                  <SelectTrigger className="w-40 border-teal-200 text-teal-500 bg-white">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
