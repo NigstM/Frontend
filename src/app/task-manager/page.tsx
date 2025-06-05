@@ -374,10 +374,10 @@ export default function TaskManager() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark bg-slate-950" : "bg-white"}`}>
-      <div className="mx-auto max-w-6xl p-4">
+    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark bg-slate-950" : "bg-teal-100"}`}>
+      <div className="mx-auto max-w-6xl p-4 ">
         {/* Header */}
-        <Card className="mb-6 border-0 shadow-xl bg-white dark:bg-slate-900">
+        <Card className="mb-6 border-0 shadow-xl dark:bg-slate-900">
           <CardHeader className="bg-gradient-to-r from-teal-600 via-cyan-600 to-emerald-600 text-white rounded-t-lg">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
