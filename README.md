@@ -13,7 +13,7 @@ A comprehensive task management application built with React, Next.js, and TypeS
   - Local storage persistence
   - Undo/redo functionality
   - Import/export operations
-- **Location**: `task-manager.tsx`
+- **Location**: `task-manager/page.tsx`
 
 #### `TaskForm`
 - **Purpose**: Form for creating new tasks
