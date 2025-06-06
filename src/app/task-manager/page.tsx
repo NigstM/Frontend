@@ -461,7 +461,7 @@ export default function TaskManager() {
                     <SelectTrigger className="border-teal-200 focus:border-teal-500">
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="dark:bg-slate-900">
                       <SelectItem value="low">🟢 Low</SelectItem>
                       <SelectItem value="medium">🟡 Medium</SelectItem>
                       <SelectItem value="high">🔴 High</SelectItem>
@@ -472,11 +472,11 @@ export default function TaskManager() {
                   <Label htmlFor="task-category" className="text-teal-700 dark:text-teal-300 font-medium">
                     Category
                   </Label>
-                  <Select value={newTaskCategory} onValueChange={setNewTaskCategory}>
-                    <SelectTrigger className="border-teal-200 focus:border-teal-500">
+                  <Select  value={newTaskCategory} onValueChange={setNewTaskCategory}>
+                    <SelectTrigger className="border-teal-200  focus:border-teal-500">
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="dark:bg-slate-900">
                       {CATEGORIES.map((category) => (
                         <SelectItem key={category} value={category}>
                           {category}
@@ -509,11 +509,11 @@ export default function TaskManager() {
                         variant="outline"
                         className="w-full justify-start text-left font-normal border-teal-200 hover:border-teal-300"
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4 text-teal-600" />
+                        <CalendarIcon className="mr-2 h-4 w-4  text-teal-600" />
                         {newTaskDueDate ? format(newTaskDueDate, "PPP") : "Pick a date"}
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0">
+                    <PopoverContent className="w-auto p-0 dark:bg-slate-900">
                       <Calendar mode="single" selected={newTaskDueDate} onSelect={setNewTaskDueDate} initialFocus />
                     </PopoverContent>
                   </Popover>
@@ -557,7 +557,7 @@ export default function TaskManager() {
                     <Filter className="w-4 h-4 mr-2 bg-white text-teal-600" />
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent className="text-teal-500">
+                  <SelectContent className="text-white dark:bg-slate-900">
                     <SelectItem value="all">All</SelectItem>
                     <SelectItem value="pending">Pending</SelectItem>
                     <SelectItem value="completed">Completed</SelectItem>
@@ -570,7 +570,7 @@ export default function TaskManager() {
                   <SelectTrigger className="w-40 border-teal-200 text-teal-500 bg-white">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="dark:bg-slate-900">
                     <SelectItem value="created">Date Created</SelectItem>
                     <SelectItem value="priority">Priority</SelectItem>
                     <SelectItem value="dueDate">Due Date</SelectItem>
@@ -631,37 +631,37 @@ export default function TaskManager() {
 
             {/* Quick stats */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
-              <Card className="text-center bg-gradient-to-br from-teal-500 to-teal-600 text-white border-0 shadow-lg">
-                <CardContent className="pt-4">
-                  <div className="text-2xl font-bold">{stats.total}</div>
-                  <div className="text-xs text-teal-100">Total</div>
-                </CardContent>
-              </Card>
-              <Card className="text-center bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-0 shadow-lg">
-                <CardContent className="pt-4">
-                  <div className="text-2xl font-bold">{stats.completed}</div>
-                  <div className="text-xs text-emerald-100">Completed</div>
-                </CardContent>
-              </Card>
-              <Card className="text-center bg-gradient-to-br from-cyan-500 to-cyan-600 text-white border-0 shadow-lg">
-                <CardContent className="pt-4">
-                  <div className="text-2xl font-bold">{stats.pending}</div>
-                  <div className="text-xs text-cyan-100">Pending</div>
-                </CardContent>
-              </Card>
-              <Card className="text-center bg-gradient-to-br from-rose-500 to-rose-600 text-white border-0 shadow-lg">
-                <CardContent className="pt-4">
-                  <div className="text-2xl font-bold">{stats.overdue}</div>
-                  <div className="text-xs text-rose-100">Overdue</div>
-                </CardContent>
-              </Card>
-              <Card className="text-center bg-gradient-to-br from-purple-500 to-purple-600 text-white border-0 shadow-lg">
-                <CardContent className="pt-4">
-                  <div className="text-2xl font-bold">{stats.highPriority}</div>
-                  <div className="text-xs text-purple-100">High Priority</div>
-                </CardContent>
-              </Card>
-            </div>
+  <Card className="text-center bg-gradient-to-br from-teal-500 to-teal-600 text-white border-0 shadow-lg transition-transform duration-300 hover:scale-105">
+    <CardContent className="pt-4">
+      <div className="text-2xl font-bold">{stats.total}</div>
+      <div className="text-xs text-teal-100">Total</div>
+    </CardContent>
+  </Card>
+  <Card className="text-center bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-0 shadow-lg transition-transform duration-300 hover:scale-105">
+    <CardContent className="pt-4">
+      <div className="text-2xl font-bold">{stats.completed}</div>
+      <div className="text-xs text-emerald-100">Completed</div>
+    </CardContent>
+  </Card>
+  <Card className="text-center bg-gradient-to-br from-cyan-500 to-cyan-600 text-white border-0 shadow-lg transition-transform duration-300 hover:scale-105">
+    <CardContent className="pt-4">
+      <div className="text-2xl font-bold">{stats.pending}</div>
+      <div className="text-xs text-cyan-100">Pending</div>
+    </CardContent>
+  </Card>
+  <Card className="text-center bg-gradient-to-br from-rose-500 to-rose-600 text-white border-0 shadow-lg transition-transform duration-300 hover:scale-105">
+    <CardContent className="pt-4">
+      <div className="text-2xl font-bold">{stats.overdue}</div>
+      <div className="text-xs text-rose-100">Overdue</div>
+    </CardContent>
+  </Card>
+  <Card className="text-center bg-gradient-to-br from-purple-500 to-purple-600 text-white border-0 shadow-lg transition-transform duration-300 hover:scale-105">
+    <CardContent className="pt-4">
+      <div className="text-2xl font-bold">{stats.highPriority}</div>
+      <div className="text-xs text-purple-100">High Priority</div>
+    </CardContent>
+  </Card>
+</div>
 
             {/* Progress bar */}
             {stats.total > 0 && (
