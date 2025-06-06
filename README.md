@@ -13,7 +13,7 @@ A comprehensive task management application built with React, Next.js, and TypeS
   - Local storage persistence
   - Undo/redo functionality
   - Import/export operations
-- **Location**: `task-manager/page.tsx`
+
 
 #### `TaskForm`
 - **Purpose**: Form for creating new tasks
@@ -22,7 +22,7 @@ A comprehensive task management application built with React, Next.js, and TypeS
   - Multi-field form with validation
   - Priority, category, and due date selection
   - Real-time validation feedback
-- **Location**: `components/task-form.tsx`
+
 
 #### `TaskFilters`
 - **Purpose**: Search, filter, and sort controls
@@ -32,7 +32,7 @@ A comprehensive task management application built with React, Next.js, and TypeS
   - Filter by status (all, pending, completed, overdue)
   - Sort by multiple criteria
   - Bulk selection controls
-- **Location**: `components/task-filters.tsx`
+
 
 #### `TaskList`
 - **Purpose**: Container for rendering task items
@@ -41,7 +41,7 @@ A comprehensive task management application built with React, Next.js, and TypeS
   - Empty state handling
   - Responsive grid layout
   - Conditional rendering based on filters
-- **Location**: `components/task-list.tsx`
+
 
 #### `TaskItem`
 - **Purpose**: Individual task display and interaction
@@ -51,7 +51,7 @@ A comprehensive task management application built with React, Next.js, and TypeS
   - Priority and category badges
   - Due date warnings
   - Hover actions (edit, delete)
-- **Location**: `components/task-item.tsx`
+
 
 #### `TaskEditForm`
 - **Purpose**: Modal form for editing existing tasks
@@ -60,7 +60,7 @@ A comprehensive task management application built with React, Next.js, and TypeS
   - Pre-populated form fields
   - Same validation as creation form
   - Due date management
-- **Location**: `components/task-edit-form.tsx`
+
 
 ### UI Components
 
@@ -68,25 +68,25 @@ A comprehensive task management application built with React, Next.js, and TypeS
 - **Purpose**: Display task statistics dashboard
 - **Props**: Statistics object with counts
 - **Features**: 5-card layout showing total, completed, pending, overdue, and high-priority counts
-- **Location**: `components/task-stats.tsx`
+
 
 #### `BulkActions`
 - **Purpose**: Bulk operation controls
 - **Props**: Selection count, action handlers
 - **Features**: Mark complete, delete, and deselect actions for multiple tasks
-- **Location**: `components/bulk-actions.tsx`
+
 
 #### `ProgressBar`
 - **Purpose**: Visual progress indicator
 - **Props**: Completed and total task counts
 - **Features**: Animated progress bar with percentage display
-- **Location**: `components/progress-bar.tsx`
+
 
 #### `HeaderActions`
 - **Purpose**: Top-level action buttons
 - **Props**: Dark mode state, undo capability, import/export handlers
 - **Features**: Undo, export, import, and theme toggle buttons
-- **Location**: `components/header-actions.tsx`
+
 
 ## 🔄 Data Flow
 
@@ -113,35 +113,8 @@ TaskManager
         └── TaskEditForm (edit state + handlers)
 \`\`\`
 
-### Event Flow
-1. **User Actions** → Component Event Handlers
-2. **Component Handlers** → TaskManager State Updates
-3. **State Updates** → Re-render Affected Components
-4. **Side Effects** → Local Storage, DOM Updates
 
 ## 🎯 Component Benefits
-
-### Separation of Concerns
-- **TaskManager**: Business logic and state management
-- **Form Components**: User input and validation
-- **Display Components**: Data presentation and formatting
-- **Action Components**: User interactions and bulk operations
-
-### Reusability
-- **TaskForm** and **TaskEditForm** share similar structure
-- **TaskStats** can be used in different contexts
-- **BulkActions** pattern applicable to other list interfaces
-
-### Maintainability
-- Each component has a single responsibility
-- Props interfaces clearly define component contracts
-- Easy to test individual components in isolation
-- Simple to add new features or modify existing ones
-
-### Performance
-- Components only re-render when their props change
-- Bulk operations handled efficiently at the container level
-- Local state prevents unnecessary parent re-renders
 
 ## 🔧 Usage Patterns
 
@@ -155,18 +128,9 @@ TaskManager
 - **Behavior**: Override component props or extend functionality
 - **Layout**: Rearrange components in TaskManager without breaking functionality
 
-### Testing Strategy
-- **Unit Tests**: Test individual components with mock props
-- **Integration Tests**: Test component interactions and data flow
-- **E2E Tests**: Test complete user workflows across components
 
 ## 📱 Responsive Design
 
-Each component is designed to be responsive:
-- **TaskForm**: Stacked layout on mobile, grid on desktop
-- **TaskFilters**: Wrapped controls that stack on smaller screens
-- **TaskList**: Single column on mobile, maintains spacing
-- **TaskStats**: 2-column on mobile, 5-column on desktop
 
 ## 🎨 Theming
 
